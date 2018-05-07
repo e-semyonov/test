@@ -12,7 +12,29 @@ public class LinkedList {
         h.next.next.next = new Node("17");
         
         printLinkedList(h);
-        
+
+        h = reverseLinkedList(h);
+        printLinkedList(h);
+    }
+
+    private static Node reverseLinkedList(Node node) {
+
+        Node head = node;
+        Node current = node;
+        Node next = node.next;
+        head.next = null;
+
+
+
+        while (next != null){
+            current = head;
+            head = next;
+            next = next.next;
+            head.next = current;
+
+         }
+
+        return head;
     }
 
     private static void printLinkedList(Node h) {
